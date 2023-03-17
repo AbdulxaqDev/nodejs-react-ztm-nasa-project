@@ -4,9 +4,11 @@
  "description": "NASA Mission Control API",
  "main": "src/server.js",
  "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
+  "test": "jest",
+  "test-watch": "jest --watch",
   "watch": "node --trace-warnings --watch src/server.js",
-  "start": "PORT=5000 node src/server.js"
+  "start": "node src/server.js",
+  "cluster":"pm2 start src/server.js -i max"
  },
  "keywords": [],
  "author": "",
@@ -15,6 +17,11 @@
   "cors": "^2.8.5",
   "csv-parse": "^5.3.5",
   "express": "^4.18.2",
-  "morgan": "^1.10.0"
+  "morgan": "^1.10.0",
+  "pm2": "^5.2.2"
+ },
+ "devDependencies": {
+  "jest": "^29.4.3",
+  "supertest": "^6.3.3"
  }
 }
